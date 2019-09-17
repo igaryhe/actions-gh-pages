@@ -63,6 +63,9 @@ else
     cd "${PUBLISH_DIR}"
     git init
     git checkout --orphan "${remote_branch}"
+    if [ -n "${CNAME}" ]; then
+        echo "${CNAME}" >> CNAME
+    fi
 fi
 
 # push to publishing branch
