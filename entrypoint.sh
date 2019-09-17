@@ -61,11 +61,11 @@ if git clone --depth=1 --single-branch --branch "${remote_branch}" "${remote_rep
         xargs -I % cp -rf % "${local_dir}/"
 else
     cd "${PUBLISH_DIR}"
-    git init
-    git checkout --orphan "${remote_branch}"
     if [ -n "${CNAME}" ]; then
         echo "${CNAME}" >> CNAME
     fi
+    git init
+    git checkout --orphan "${remote_branch}"
 fi
 
 # push to publishing branch
